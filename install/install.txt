@@ -1,0 +1,18 @@
+Wymagania:
+Aby gra poprawnie dzia³a³a musz± byæ spe³nione nastêpuj±ce wymagania:
+PHP - wersja co najmniej 4.2
+MySQL - wersja co najmniej 3.23
+
+Instalacja:
+1. Skopiuj pliki z gr± na serwer. Aby by³a mo¿liwo¶æ ³adowania avatarów oraz herbów klanów musisz ustawiæ odpowiednie atrybuty katalogom avatars oraz images/tribes. Atrybuty ustawia siê wpisuj±c w programie ftp komendê chmod 777 [nazwa katalogu] np chmod 777 avatars.
+2. Utwórz bazê danych i w phpmyadmin w SQL u¿yj opcji za³aduj z pliku - wybierz plik vallheru.sql aby wype³niæ bazê danych
+3. W plikach config.php oraz chatmsg.php ustaw nazwê u¿ytkownika, has³o oraz nazwê bazy danych.
+4. Utwórz pierwszego gracza a nastêpnie wejd¼ do phpmyadmin i zmieñ mu range (rank) na Admin.
+
+Gar¶æ porad:
+- Niestety aby zarz±dzaæ tego typu gr± trzeba mieæ jakie takie pojêcie o php i mysql. Pomoc w tej sprawie mo¿esz uzyskaæ na forum Unlimted Creators.
+- Na samym pocz±tku powymy¶laj nazwy potworów, przedmioty oraz czary. Mo¿esz to dodawaæ do gry w panelu administratora gry
+- Automatyczne resety - aby wykonaæ automatyczny reset w grze musisz mieæ dostêp na serwerze do opcji CronJobs. Tam wpisujesz czas w jakim ma siê wykonywaæ skrypt resetu a w linii komend wpsujesz co¶ takiego:
+lynx -dump http://adres/katalog/plik.php
+- Je¿eli bêdziesz mia³ jakie¶ problemy mo¿esz szukaæ pomocy na stronie www.uc.h4c.pl
+- Obecna wersja gry jest wersj± beta, st±d mog± wystêpowaæ problemy, b±d¼ jakie¶ b³êdy.
