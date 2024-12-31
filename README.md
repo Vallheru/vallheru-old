@@ -31,3 +31,12 @@ After the game is initialized use the following endpoints and credentials to man
 - PHP 4.4.9 (Fast CGI)
 - MySQL 5
 - Nginx
+
+## Gallery
+
+<p align="center">
+  <img src="screenshots/home-page.png" width="250" title="Home Page">
+  <img src="screenshots/city.png" width="250" title="City">
+  <img src="screenshots/inn-chat.png" width="250" title="Inn chat">
+  <img src="screenshots/profile.png" width="250" title="Profile">
+</p>
