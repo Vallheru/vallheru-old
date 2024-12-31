@@ -16,6 +16,8 @@
 # Struktura tabeli dla  `aktywacja`
 #
 
+USE vallheru;
+
 CREATE TABLE `aktywacja` (
   `id` int(11) NOT NULL auto_increment,
   `user` varchar(15) NOT NULL default '',
@@ -24,11 +26,11 @@ CREATE TABLE `aktywacja` (
   `aktyw` int(11) NOT NULL default '0',
   `refs` int(11) NOT NULL default '0',
   `ip` varchar(50) NOT NULL default '',
-  `data` date NOT NULL default '0000-00-00',
+  `data` date NOT NULL default '2000-01-01',
   PRIMARY KEY  (`id`),
   KEY `user` (`user`),
   FULLTEXT KEY `user_2` (`user`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -48,7 +50,7 @@ CREATE TABLE `alchemik` (
   `status` char(1) NOT NULL default 'S',
   PRIMARY KEY  (`id`),
   KEY `gracz` (`gracz`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -61,7 +63,7 @@ CREATE TABLE `categories` (
   `name` varchar(100) NOT NULL default '',
   `desc` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`id`)
-) TYPE=MyISAM;
+);
 
 # --------------------------------------------------------
 
@@ -77,7 +79,7 @@ CREATE TABLE `chat` (
   KEY `id_2` (`id`),
   FULLTEXT KEY `chat` (`chat`),
   FULLTEXT KEY `user` (`user`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -91,7 +93,7 @@ CREATE TABLE `chat_config` (
   `gracz` int(11) NOT NULL default '0',
   PRIMARY KEY  (`id`),
   KEY `id_2` (`id`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -111,7 +113,7 @@ CREATE TABLE `core` (
   `active` char(1) NOT NULL default 'N',
   PRIMARY KEY  (`id`),
   KEY `id` (`id`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -129,7 +131,7 @@ CREATE TABLE `core_market` (
   `defense` int(11) NOT NULL default '0',
   PRIMARY KEY  (`id`),
   KEY `id` (`id`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -147,7 +149,7 @@ CREATE TABLE `cores` (
   `desc` text NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `id` (`id`)
-) TYPE=MyISAM;
+);
 
 # --------------------------------------------------------
 
@@ -165,7 +167,7 @@ CREATE TABLE `czary` (
   `obr` double(11,1) NOT NULL default '1.0',
   `status` char(1) NOT NULL default 'S',
   KEY `id` (`id`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -192,7 +194,7 @@ CREATE TABLE `equipment` (
   KEY `status` (`status`),
   KEY `type` (`type`),
   KEY `owner` (`owner`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -208,7 +210,7 @@ CREATE TABLE `herbs` (
   `nutari` int(11) NOT NULL default '0',
   PRIMARY KEY  (`gracz`),
   UNIQUE KEY `id` (`id`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -223,7 +225,7 @@ CREATE TABLE `hmarket` (
   `cost` int(11) NOT NULL default '0',
   `nazwa` varchar(30) NOT NULL default '',
   UNIQUE KEY `id` (`id`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -246,7 +248,7 @@ CREATE TABLE `kopalnie` (
   `krysztal` int(11) NOT NULL default '0',
   PRIMARY KEY  (`gracz`),
   KEY `id` (`id`)
-) TYPE=MyISAM;
+);
 
 # --------------------------------------------------------
 
@@ -270,7 +272,7 @@ CREATE TABLE `kowal` (
   `krysztal` int(11) NOT NULL default '0',
   `type` char(1) NOT NULL default '',
   KEY `id` (`id`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -286,7 +288,7 @@ CREATE TABLE `kowal_praca` (
   `u_energia` int(4) NOT NULL default '0',
   PRIMARY KEY  (`gracz`),
   KEY `id` (`id`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -299,10 +301,10 @@ CREATE TABLE `log` (
   `owner` int(11) NOT NULL default '0',
   `log` text NOT NULL,
   `unread` char(1) NOT NULL default 'F',
-  `czas` datetime NOT NULL default '0000-00-00 00:00:00',
+  `czas` datetime NOT NULL default '2000-01-01 00:00:00',
   UNIQUE KEY `id` (`id`),
   KEY `id_2` (`id`)
-) TYPE=MyISAM;
+);
 
 # --------------------------------------------------------
 
@@ -321,7 +323,7 @@ CREATE TABLE `mail` (
   `zapis` char(1) NOT NULL default 'N',
   UNIQUE KEY `id` (`id`),
   KEY `id_2` (`id`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -331,7 +333,7 @@ CREATE TABLE `mail` (
 
 CREATE TABLE `market` (
   `platcost` int(11) NOT NULL default '0'
-) TYPE=MyISAM;
+);
 
 # --------------------------------------------------------
 
@@ -350,7 +352,7 @@ CREATE TABLE `mikstury` (
   `moc` int(3) NOT NULL default '100',
   PRIMARY KEY  (`id`),
   KEY `id_2` (`id`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -371,7 +373,7 @@ CREATE TABLE `monsters` (
   `exp2` int(11) NOT NULL default '0',
   PRIMARY KEY  (`id`),
   KEY `id` (`id`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -385,7 +387,7 @@ CREATE TABLE `news` (
   `title` text NOT NULL,
   `news` text NOT NULL,
   UNIQUE KEY `id` (`id`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -397,9 +399,9 @@ CREATE TABLE `notatnik` (
   `id` int(11) NOT NULL auto_increment,
   `gracz` int(11) NOT NULL default '0',
   `tekst` text NOT NULL,
-  `czas` datetime NOT NULL default '0000-00-00 00:00:00',
+  `czas` datetime NOT NULL default '2000-01-01 00:00:00',
   KEY `id` (`id`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -413,7 +415,7 @@ CREATE TABLE `opisy` (
   `opis` text NOT NULL,
   PRIMARY KEY  (`nazwa`),
   KEY `id` (`id`)
-) TYPE=MyISAM;
+);
 
 # --------------------------------------------------------
 
@@ -432,7 +434,7 @@ CREATE TABLE `outposts` (
   `barricades` int(11) NOT NULL default '3',
   `news` text NOT NULL,
   UNIQUE KEY `id` (`id`)
-) TYPE=MyISAM;
+);
 
 # --------------------------------------------------------
 
@@ -482,7 +484,7 @@ CREATE TABLE `players` (
   `unik` double(11,2) NOT NULL default '0.01',
   `magia` double(11,2) NOT NULL default '0.01',
   `immu` char(1) NOT NULL default 'N',
-  `data` date NOT NULL default '0000-00-00',
+  `data` date NOT NULL default '2000-01-01',
   `pm` int(11) NOT NULL default '3',
   `miejsce` varchar(15) NOT NULL default 'Altara',
   `szyb` double(11,3) NOT NULL default '3.000',
@@ -496,7 +498,9 @@ CREATE TABLE `players` (
   FULLTEXT KEY `user_2` (`user`),
   FULLTEXT KEY `ip` (`ip`),
   FULLTEXT KEY `profile` (`profile`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
+
+INSERT INTO players (user, email, pass, rank, profile) VALUES('admin', 'admin@example.com', '21232f297a57a5a743894a0e4a801fc3', 'Admin', '');
 
 # --------------------------------------------------------
 
@@ -511,7 +515,7 @@ CREATE TABLE `pmarket` (
   `cost` int(11) NOT NULL default '0',
   `nazwa` varchar(20) NOT NULL default 'mithril',
   UNIQUE KEY `id` (`id`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -526,7 +530,7 @@ CREATE TABLE `replies` (
   `body` text NOT NULL,
   `gracz` int(11) NOT NULL default '0',
   UNIQUE KEY `id` (`id`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -542,7 +546,7 @@ CREATE TABLE `topics` (
   `gracz` int(11) NOT NULL default '0',
   `cat_id` int(11) NOT NULL default '0',
   UNIQUE KEY `id` (`id`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -559,7 +563,7 @@ CREATE TABLE `tribe_mag` (
   UNIQUE KEY `id` (`id`),
   KEY `id_2` (`id`),
   KEY `klan` (`klan`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -573,7 +577,7 @@ CREATE TABLE `tribe_oczek` (
   `klan` int(11) NOT NULL default '0',
   PRIMARY KEY  (`gracz`),
   KEY `id` (`id`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -596,7 +600,7 @@ CREATE TABLE `tribe_perm` (
   `herbs` int(11) NOT NULL default '0',
   PRIMARY KEY  (`id`),
   UNIQUE KEY `tribe` (`tribe`)
-) TYPE=MyISAM;
+);
 
 # --------------------------------------------------------
 
@@ -610,7 +614,7 @@ CREATE TABLE `tribe_replies` (
   `topic_id` text NOT NULL,
   `body` text NOT NULL,
   UNIQUE KEY `id` (`id`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -625,7 +629,7 @@ CREATE TABLE `tribe_topics` (
   `starter` varchar(30) NOT NULL default '',
   `tribe` int(11) NOT NULL default '0',
   UNIQUE KEY `id` (`id`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -648,7 +652,7 @@ CREATE TABLE `tribe_zbroj` (
   UNIQUE KEY `id` (`id`),
   KEY `id_2` (`id`),
   KEY `klan` (`klan`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
 
 # --------------------------------------------------------
 
@@ -683,7 +687,7 @@ CREATE TABLE `tribes` (
   `logo` varchar(36) NOT NULL default '',
   `www` varchar(60) NOT NULL default '',
   UNIQUE KEY `id` (`id`)
-) TYPE=MyISAM;
+);
 
 # --------------------------------------------------------
 
@@ -697,4 +701,4 @@ CREATE TABLE `updates` (
   `title` text NOT NULL,
   `updates` text NOT NULL,
   UNIQUE KEY `id` (`id`)
-) TYPE=MyISAM PACK_KEYS=0;
+);
