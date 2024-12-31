@@ -25,7 +25,7 @@
  *
  ***************************************************************************/ 
 
-mysql_connect("mysql","vallheru","vallheru123");
+mysql_connect("mysql","root","vallheru123");
 mysql_select_db("vallheru");
 $gamename="Vallheru";
 session_start();

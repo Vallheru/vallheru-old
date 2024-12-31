@@ -21,9 +21,18 @@ services:
     image: mysql:5-debian
     volumes:
       - mysql_data:/var/lib/mysql
+      - ./install/vallheru.sql:/docker-entrypoint-initdb.d/vallheru.sql
     environment:
       MYSQL_ROOT_PASSWORD: vallheru123
       MYSQL_DATABASE: vallheru
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8081:80
+    environment:
+      - PMA_ARBITRARY=1
 
 volumes:
   mysql_data:
